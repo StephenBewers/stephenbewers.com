@@ -4,34 +4,74 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <title>Stephen Bewers | Web Developer</title>
-    <meta name="keywords" content="Stephen Bewers, Web Developer, front end, full stack, JavaScript, ES6, HTML, CSS, PostgreSQL, Express, React, Node" />
-    <meta name="description" content="Building modern, responsive, full-stack web apps. Check out my portfolio of demo and production projects." />
+    <meta
+      name="keywords"
+      content="Stephen Bewers, Web Developer, front end, full stack, JavaScript, ES6, HTML, CSS, PostgreSQL, Express, React, Node"
+    />
+    <meta
+      name="description"
+      content="Building modern, responsive, full-stack web apps. Check out my portfolio of demo and production projects."
+    />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="/node_modules/cookie-consent-js/src/cookie-consent.css"
+    />
+
+    <script src="/node_modules/cookie-consent-js/src/cookie-consent.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
       ScrollReveal({ reset: false });
     </script>
-
   </head>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NX40ENH01W"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    const cookieConsent = new CookieConsent({
+      contentUrl: "./src/cookie-consent-content", // location of the language files
+      buttonPrimaryClass: "cta-btn cta-btn--hero",
+      buttonSecondaryClass: "cta-btn text-color-main border-0",
+    });
+  </script>
 
-    gtag('config', 'G-NX40ENH01W');
+  <script>
+    if (cookieConsent.trackingAllowed()) {
+      // Google tag (gtag.js)
+      let gtmScript = document.createElement("script");
+      gtmScript.src = "https://www.googletagmanager.com/gtag/js?id=G-NX40ENH01W";
+      document.body.insertBefore(gtmScript, document.body.firstChild);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-NX40ENH01W");
+    }
   </script>
 
   <body>
@@ -55,9 +95,7 @@
     <!-- **** About Section **** -->
     <section id="about">
       <div class="container">
-        <h2 class="section-title">
-          About me
-        </h2>
+        <h2 class="section-title">About me</h2>
         <div class="row about-wrapper">
           <div class="col-md-6 col-sm-12">
             <div class="about-wrapper__image">
@@ -73,13 +111,17 @@
           <div class="col-md-6 col-sm-12">
             <div class="about-wrapper__info">
               <p class="about-wrapper__info-text">
-                Hi, my name is Stephen and I'm a Web Developer. I have expertise in front-end development, but also full-stack development using the PERN stack (PostgreSQL, Express, React, and Node).
+                Hi, my name is Stephen and I'm a Web Developer. I have expertise
+                in front-end development, but also full-stack development using
+                the PERN stack (PostgreSQL, Express, React, and Node).
               </p>
               <p class="about-wrapper__info-text">
-                I'm comfortable with semantic HTML, CSS Grid and Flexbox, SASS, JavaScript ES6+, React (with Hooks), Git, npm and much more.
+                I'm comfortable with semantic HTML, CSS Grid and Flexbox, SASS,
+                JavaScript ES6+, React (with Hooks), Git, npm and much more.
               </p>
               <p class="about-wrapper__info-text">
-                I also have an array of web experience outside of development including SEO, web accessibility, analytics and user experience.
+                I also have an array of web experience outside of development
+                including SEO, web accessibility, analytics and user experience.
               </p>
               <!--<span class="d-flex mt-3">
                 <a target="_blank" class="cta-btn cta-btn--resume" href="#!">
@@ -97,11 +139,12 @@
     <section id="projects">
       <div class="container">
         <div class="project-wrapper">
-          <h2 class="section-title dark-blue-text">
-            Projects
-          </h2>
+          <h2 class="section-title dark-blue-text">Projects</h2>
 
-          <p class="pb-5">I'm currently working on a portfolio of demo and production web apps to demonstrate my skills. Here are some of my completed projects:</p>
+          <p class="pb-5">
+            I'm currently working on a portfolio of demo and production web apps
+            to demonstrate my skills. Here are some of my completed projects:
+          </p>
 
           <!-- /START project -->
           <div class="row mt-5">
@@ -110,19 +153,32 @@
                 <h3 class="project-wrapper__text-title">Pokémon Pokédex</h3>
                 <div>
                   <p class="mb-4">
-                    A fully-functional production front-end web app designed and developed from scratch using data provided by <a target="_blank" href="https://pokeapi.co/">PokéAPI</a>.
+                    A fully-functional production front-end web app designed and
+                    developed from scratch using data provided by
+                    <a target="_blank" href="https://pokeapi.co/">PokéAPI</a>.
                   </p>
                   <p class="mb-4">
-                    This app was built with React using Hooks. No CSS framework was used; all styles were built from scratch to achieve exactly the design I wanted.
+                    This app was built with React using Hooks. No CSS framework
+                    was used; all styles were built from scratch to achieve
+                    exactly the design I wanted.
                   </p>
                   <p class="mb-4">
-                    Google Analytics 4 has also been implemented and subsequent user cookie confirmation, as required by EU law.
+                    Google Analytics 4 has also been implemented and subsequent
+                    user cookie confirmation, as required by EU law.
                   </p>
                 </div>
-                <a target="_blank" class="cta-btn cta-btn--hero" href="https://www.pokemonpokedex.com/">
+                <a
+                  target="_blank"
+                  class="cta-btn cta-btn--hero"
+                  href="https://www.pokemonpokedex.com/"
+                >
                   See Live
                 </a>
-                <a target="_blank" class="cta-btn text-color-main" href="https://github.com/StephenBewers/pokemonpokedex.com">
+                <a
+                  target="_blank"
+                  class="cta-btn text-color-main"
+                  href="https://github.com/StephenBewers/pokemonpokedex.com"
+                >
                   Source Code
                 </a>
               </div>
@@ -131,7 +187,11 @@
               <div class="project-wrapper__image">
                 <a href="https://www.pokemonpokedex.com/" target="_blank">
                   <div data-tilt class="thumbnail rounded">
-                    <img class="img-fluid" src="./assets/pokemonpokedex.png" alt="Screenshot of the Pokémon Pokédex web app" />
+                    <img
+                      class="img-fluid"
+                      src="./assets/pokemonpokedex.png"
+                      alt="Screenshot of the Pokémon Pokédex web app"
+                    />
                   </div>
                 </a>
               </div>
@@ -146,22 +206,36 @@
                 <h3 class="project-wrapper__text-title">SmartBrain</h3>
                 <div>
                   <p class="mb-4">
-                    A demo full-stack web app built using a PERN stack (PostgreSQL, Express, React, Node.js) and integrating with the <a href="https://www.clarifai.com/models/ai-face-detection">Clarifai API</a> for face detection.
+                    A demo full-stack web app built using a PERN stack
+                    (PostgreSQL, Express, React, Node.js) and integrating with
+                    the
+                    <a href="https://www.clarifai.com/models/ai-face-detection"
+                      >Clarifai API</a
+                    >
+                    for face detection.
                   </p>
-                  <p class="mb-4">
-                    This app demonstrates:
-                  </p>
-                    <ul class="mb-4">
-                      <li>User registration and sign in</li>
-                      <li>Secure password storage (hashing)</li>
-                      <li>Communication between front end, server and database</li>
-                      <li>Handling API response</li>
-                    </ul>
+                  <p class="mb-4">This app demonstrates:</p>
+                  <ul class="mb-4">
+                    <li>User registration and sign in</li>
+                    <li>Secure password storage (hashing)</li>
+                    <li>
+                      Communication between front end, server and database
+                    </li>
+                    <li>Handling API response</li>
+                  </ul>
                 </div>
-                <a target="_blank" class="cta-btn cta-btn--hero mb-4" href="https://smartbrain.stephenbewers.com/">
+                <a
+                  target="_blank"
+                  class="cta-btn cta-btn--hero mb-4"
+                  href="https://smartbrain.stephenbewers.com/"
+                >
                   See Live
                 </a>
-                <a target="_blank" class="cta-btn text-color-main" href="https://github.com/StephenBewers/smartbrain">
+                <a
+                  target="_blank"
+                  class="cta-btn text-color-main"
+                  href="https://github.com/StephenBewers/smartbrain"
+                >
                   Source Code
                 </a>
               </div>
@@ -170,7 +244,11 @@
               <div class="project-wrapper__image">
                 <a href="https://smartbrain.stephenbewers.com/" target="_blank">
                   <div data-tilt class="thumbnail rounded">
-                    <img class="img-fluid" src="./assets/smartbrain.png" alt="Screenshot of the SmartBrain web app" />
+                    <img
+                      class="img-fluid"
+                      src="./assets/smartbrain.png"
+                      alt="Screenshot of the SmartBrain web app"
+                    />
                   </div>
                 </a>
               </div>
@@ -179,7 +257,6 @@
           <!-- /END Project -->
 
           <p class="pb-5">More projects are coming soon. Watch this space!</p>
-
         </div>
       </div>
     </section>
@@ -188,12 +265,11 @@
     <!-- **** Contact Section **** -->
     <section id="contact">
       <div class="container">
-        <h2 class="section-title">
-          Contact
-        </h2>
+        <h2 class="section-title">Contact</h2>
         <div class="contact-wrapper">
           <p class="contact-wrapper__text">
-            For all enquiries about me, my work, or something I might be able to help with.
+            For all enquiries about me, my work, or something I might be able to
+            help with.
           </p>
           <a
             target="_blank"
@@ -224,10 +300,11 @@
         <hr />
 
         <p class="footer__text">
-          © 2022 - Template developed by <a href="https://github.com/cobidev" target="_blank">Jacobo Martínez</a>
-          </a>
+          © 2022 - Template developed by
+          <a href="https://github.com/cobidev" target="_blank"
+            >Jacobo Martínez</a
+          >
         </p>
-
       </div>
     </footer>
     <!-- /END Footer Section -->
