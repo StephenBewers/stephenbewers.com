@@ -37,37 +37,31 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
+    />
 
-    <script src="/src/js/cookie-consent.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
       ScrollReveal({ reset: false });
     </script>
   </head>
 
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-NX40ENH01W"
+  ></script>
   <script>
-    const cookieConsent = new CookieConsent({
-      contentUrl: "./src/cookie-consent-content", // location of the language files
-      buttonPrimaryClass: "cta-btn cta-btn--hero",
-      buttonSecondaryClass: "cta-btn text-color-main border-0",
-    });
-  </script>
-
-  <script>
-    if (cookieConsent.trackingAllowed()) {
-      // Google tag (gtag.js)
-      let gtmScript = document.createElement("script");
-      gtmScript.src = "https://www.googletagmanager.com/gtag/js?id=G-NX40ENH01W";
-      document.body.insertBefore(gtmScript, document.body.firstChild);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-NX40ENH01W");
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
     }
+    gtag("js", new Date());
+
+    gtag("config", "G-NX40ENH01W");
   </script>
 
   <body>
@@ -284,7 +278,7 @@
         <a href="#top" class="back-to-top">
           <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
         </a>
-        <div class="social-links" style="margin-bottom:2em;">
+        <div class="social-links" style="margin-bottom: 2em">
           <a href="https://www.linkedin.com/in/stephenbewers/" target="_blank">
             <i class="fa fa-linkedin fa-inverse"></i>
           </a>
@@ -292,7 +286,6 @@
             <i class="fa fa-github fa-inverse"></i>
           </a>
         </div>
-        <a href="javascript:cookieConsent.reset()" style="color:white; font-size:1.2em;">Cookie settings</a>
 
         <hr />
 
@@ -305,5 +298,29 @@
       </div>
     </footer>
     <!-- /END Footer Section -->
+
+    <!--Cookie Consent-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
+      data-cfasync="false"
+    ></script>
+    <script>
+      window.cookieconsent.initialise({
+        palette: {
+          popup: {
+            background: "#191654",
+            text: "#ffffff",
+          },
+          button: {
+            background: "transparent",
+            text: "#ffffff",
+            border: "#ffffff",
+          },
+        },
+        content: {
+          message: "I use cookies for analytics, to measure traffic to my website.",
+        },
+      });
+    </script>
   </body>
 </html>

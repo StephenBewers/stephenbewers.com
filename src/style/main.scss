@@ -8,7 +8,6 @@
 @import './base/typography';
 
 @import './components/buttons';
-@import './components/cookie-consent-overrides';
 
 @import './layout/footer';
 @import './layout/sections';
@@ -17,3 +16,23 @@
 @import './sections/contact';
 @import './sections/hero';
 @import './sections/projects';
+
+.cc-banner {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+}
+
+.cc-link {
+    opacity: 1;
+    font-weight: bold;
+    color: #43C6AC !important;
+
+    &:hover {
+        color: #fff !important;;
+    }
+}
+
+.cc-btn:hover {
+    color: #43C6AC;
+    border-color: #43C6AC;
+}
